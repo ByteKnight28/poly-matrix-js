@@ -30,6 +30,7 @@ function runWorkerTask(task) {
 
 // In-memory key store (Session Directory)
 const keyDirectory = {};
+const SESSION_TTL_MS = 5 * 60 * 1000; // 5 minutes
 
 app.get('/key', async (req, res) => {
   try {
@@ -56,6 +57,11 @@ app.post('/handshake', async (req, res) => {
     if (!keyDirectory[sessionId]) return res.status(404).json({ error: 'Session not found' });
     
     const session = keyDirectory[sessionId];
+    // Enforce session TTL
+    if (Date.now() - session.createdAt > SESSION_TTL_MS) {
+      delete keyDirectory[sessionId];
+      return res.status(410).json({ error: 'Session expired' });
+    }
     const c = new Uint8Array(Buffer.from(cBase64, 'base64'));
     
     const result = await runWorkerTask({

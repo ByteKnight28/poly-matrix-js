@@ -23,6 +23,15 @@
     "lint": "make lint"
   },
   "dependencies": {
+    "@stdlib/array-int32": "^0.2.3",
+    "@stdlib/array-uint8": "^0.2.3",
+    "@stdlib/assert-is-nonnegative-integer": "^0.2.3",
+    "@stdlib/assert-is-uint8array": "^0.2.3",
+    "@stdlib/math-base-ops-imul": "^0.2.2",
+    "@stdlib/math-base-special-abs": "^0.2.3",
+    "@stdlib/math-base-special-floor": "^0.2.4",
+    "@stdlib/ndarray-base-numel": "^0.2.3",
+    "@stdlib/ndarray-ctor": "^0.3.1",
     "express": "^5.2.1",
     "js-sha3": "^0.9.3"
   },

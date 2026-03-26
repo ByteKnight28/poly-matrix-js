@@ -25,14 +25,10 @@ test('K-PKE Encrypt and Decrypt reversibility', t => {
   const r = new Uint8Array(32);
   r.fill(77);
 
-  console.log('Starting Extract pkeEncrypt...');
   const cBytes = require('../lib/pke').pkeEncrypt(ek, m, r, 'ML-KEM-512');
-  console.log('Finished pkeEncrypt!!!');
   t.equal(cBytes.length, 32 * 10 * 2 + 32 * 4, 'Ciphertext size is correct');
 
-  console.log('Starting pkeDecrypt...');
   const mDecrypted = require('../lib/pke').pkeDecrypt(dk, cBytes, 'ML-KEM-512');
-  console.log('Finished pkeDecrypt!!!');
   t.deepEqual(mDecrypted, m, 'Decrypted message exactly matches strictly original message');
   
   t.end();

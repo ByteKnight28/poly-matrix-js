@@ -9,6 +9,17 @@ This library is engineered for maximal V8 execution efficiency and strict standa
 - **Mathematical Scaffolding**: Implements high-performance bitwise Barrett and Montgomery reduction protocols bridging Cooley-Tukey and Gentleman-Sande NTT butterflies safely avoiding precision overflows natively.
 - **Constant-Time execution**: Fully defends against IND-CCA2 Decapsulation timing side-channels via logical arithmetic bit-mask mappings preventing V8 branch inferences on implicit rejection states.
 
+## stdlib Ecosystem Showcase
+This project is built on `@stdlib` — the standard library for JavaScript scientific computing. The following packages are integrated:
+
+| Package | Usage |
+|---------|-------|
+| `@stdlib/ndarray-ctor` | 3D polynomial matrix (`PolyMatrix`) backed by proper ndarray |
+| `@stdlib/array-int32` | Typed array allocation for polynomial buffers |
+| `@stdlib/math-base-ops-imul` | All modular arithmetic (NTT, Barrett, Montgomery) |
+| `@stdlib/math-base-special-floor` | Compression/decompression rounding |
+| `@stdlib/assert-is-uint8array` | Input validation on KEM API entry points |
+
 ## Installation
 
 ```bash
