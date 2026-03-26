@@ -1,5 +1,5 @@
 {
-  "name": "poly-matrix-js",
+  "name": "kem-js",
   "version": "1.0.0",
   "description": "FIPS 203 compliant ML-KEM (Kyber) Post-Quantum Cryptography library natively in modern JavaScript.",
   "license": "MIT",

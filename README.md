@@ -23,7 +23,7 @@ This project is built on `@stdlib` the standard library for JavaScript scientifi
 ## Installation
 
 ```bash
-npm install poly-matrix-js
+npm install kem-js
 ```
 
 ## Parameter Sets
@@ -36,7 +36,7 @@ Supported parameter architectures uniformly match NIST standardization security 
 
 ```javascript
 const crypto = require('crypto');
-const { mlKemKeyGen, mlKemEncaps, mlKemDecaps } = require('poly-matrix-js');
+const { mlKemKeyGen, mlKemEncaps, mlKemDecaps } = require('kem-js');
 
 // 1. Establish Randomness Seeds
 const d = crypto.randomBytes(32);
