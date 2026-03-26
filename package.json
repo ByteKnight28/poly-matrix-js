@@ -1,0 +1,30 @@
+{
+  "name": "@stdlib/math-base-special-poly-matrix-js",
+  "version": "0.0.0",
+  "description": "ML-KEM Polynomial Matrix Math in JavaScript using ndarray-backed Int32Arrays.",
+  "license": "Apache-2.0",
+  "author": {
+    "name": "The Stdlib Authors",
+    "url": "https://github.com/stdlib-js/stdlib/graphs/contributors"
+  },
+  "main": "./lib",
+  "directories": {
+    "lib": "./lib",
+    "test": "./test",
+    "docs": "./docs"
+  },
+  "scripts": {
+    "test": "make test",
+    "lint": "make lint"
+  },
+  "dependencies": {
+    "js-sha3": "^0.9.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "tape": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  }
+}
