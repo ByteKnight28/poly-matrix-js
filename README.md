@@ -10,7 +10,7 @@ This library is engineered for maximal V8 execution efficiency and strict standa
 - **Constant-Time execution**: Fully defends against IND-CCA2 Decapsulation timing side-channels via logical arithmetic bit-mask mappings preventing V8 branch inferences on implicit rejection states.
 
 ## stdlib Ecosystem Showcase
-This project is built on `@stdlib` — the standard library for JavaScript scientific computing. The following packages are integrated:
+This project is built on `@stdlib` the standard library for JavaScript scientific computing. The following packages are integrated:
 
 | Package | Usage |
 |---------|-------|
