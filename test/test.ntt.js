@@ -1,6 +1,5 @@
 const test = require('tape');
 const { ntt, invNTT } = require('../lib/ntt');
-const { csubq } = require('../lib/reduce');
 
 test('NTT and INTT Reversibility', t => {
   const poly = new Int32Array(256);
