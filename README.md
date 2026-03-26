@@ -1,4 +1,4 @@
-# Poly Matrix JS (ML-KEM)
+# KEM JS (ML-KEM)
 
 A pure-JavaScript implementation of the **FIPS 203 ML-KEM** (formerly CRYSTALS-Kyber) Key Encapsulation Mechanism.
 
