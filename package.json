@@ -1,17 +1,22 @@
 {
-  "name": "@stdlib/math-base-special-poly-matrix-js",
-  "version": "0.0.0",
-  "description": "ML-KEM Polynomial Matrix Math in JavaScript using ndarray-backed Int32Arrays.",
-  "license": "Apache-2.0",
-  "author": {
-    "name": "The Stdlib Authors",
-    "url": "https://github.com/stdlib-js/stdlib/graphs/contributors"
-  },
-  "main": "./lib",
+  "name": "poly-matrix-js",
+  "version": "1.0.0",
+  "description": "FIPS 203 compliant ML-KEM (Kyber) Post-Quantum Cryptography library natively in modern JavaScript.",
+  "license": "MIT",
+  "author": "ByteKnight28",
+  "keywords": [
+    "ML-KEM",
+    "Kyber",
+    "FIPS 203",
+    "Post-Quantum Cryptography",
+    "PQC"
+  ],
+  "main": "lib/index.js",
   "directories": {
     "lib": "./lib",
     "test": "./test",
-    "docs": "./docs"
+    "docs": "./docs",
+    "backend": "./backend"
   },
   "scripts": {
     "test": "make test",
