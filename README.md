@@ -20,6 +20,31 @@ This project is built on `@stdlib` the standard library for JavaScript scientifi
 | `@stdlib/math-base-special-floor` | Compression/decompression rounding |
 | `@stdlib/assert-is-uint8array` | Input validation on KEM API entry points |
 
+### stdlib in Action
+Here is a brief look at how `poly-matrix-js` utilizes `@stdlib` to engineer efficient, garbage-collection-free mathematical structures:
+
+```javascript
+const ndarray = require('@stdlib/ndarray-ctor');
+const Int32Array_ = require('@stdlib/array-int32');
+
+// 1. Allocate a single flat typed memory buffer for polynomial rings
+const N = 256; // Standard polynomial degree
+const length = rows * cols * N;
+const buffer = new Int32Array_(length); 
+
+// 2. Structure the flat memory buffer into a 3D PolyMatrix tensor
+const tensor = ndarray('int32', buffer, [rows, cols, N], [cols * N, N, 1], 0, 'row-major');
+
+// 3. Perform constant-time scalar index mutations safely
+tensor.set(row, col, coeffIndex, value);
+```
+
+**How `@stdlib` empowers this ML-KEM Implementation:**
+- **Zero-Allocation Math Engine:** Polynomial multiplications and Number-Theoretic Transforms (NTT) execute right over flat integer arrays without instantiating intermediate objects, entirely bypassing V8 garbage collector stalls during heavy cryptographic loops.
+- **Cache-Locality with `ndarray`:** `@stdlib/ndarray-ctor` beautifully bridges the conceptual need for 3D matrix arithmetic (`rows × columns × 256 polynomial coefficients`) whilst maintaining the strict memory contiguity of a 1D `@stdlib/array-int32` backend buffer. This ensures the CPU can reliably pre-fetch sequential memory segments.
+- **Constant-Time Execution Primitives:** Utilizing low-level bitwise manipulation operators and `@stdlib/math-base-ops-imul` forces implicit rejection checks and reductions to evaluate via mathematical masks, mitigating branching side-channel attacks naturally.
+- **Secure Input Assertions:** Functions robustly gate-keep public-facing KEM parameters exclusively through `@stdlib/assert-is-uint8array`, ensuring strict compliance to expected entropy buffers at minimum execution cost.
+
 ## Installation
 
 ```bash
